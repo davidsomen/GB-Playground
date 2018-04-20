@@ -21,7 +21,7 @@ INCLUDE "assets/window.inc"
 
 FLASH_DELAY                 EQU $4
 MOVE_DELAY                  EQU $2
-TITLE_PALLETE_TABLE_SIZE    EQU $6;23
+TITLE_PALLETE_TABLE_SIZE    EQU $6;232
 TITLE_PALLETE_TABLE:
     DB %11100100; black text
     DB %10010000
@@ -61,6 +61,9 @@ bug_tile_data::
     DW `03133330
     DW `00333300
     DW `22000022
+    
+SOUNDTEST:
+    DW $00, $05, $01, $02, $03, $04, $05
     
 ; ////////////////////////
 ; //                    //

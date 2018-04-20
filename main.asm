@@ -1,5 +1,5 @@
 INCLUDE "constants.inc"
-INCLUDE "header.asm"
+INCLUDE "header.inc"
 
 SECTION "main", ROMX
     
@@ -51,9 +51,14 @@ main:
 .loop:
     call wait_vblank
     call lcd_off
-        call title_init
+    call title_init
     call lcd_on
     
     call title_loop
     
+    ;ld a, 0
+    ;call DS_Play
+    
     jr .loop
+    
+;include	"music/DevSound.asm"
