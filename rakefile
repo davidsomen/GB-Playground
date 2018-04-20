@@ -1,0 +1,14 @@
+source_files = Rake::FileList["*.asm"]
+object_files = source_files.ext(".o")
+
+desc "rake binary"
+task :default => "game.gb"
+
+desc "Build the gb file"
+file "game.gb" => object_files do |task|
+	sh "rgblink -o#{task.name} #{object_files}"
+end
+
+rule '.o' => '.asm' do |task|
+	sh "rgbasm -o#{task.name} #{task.source}"
+end
